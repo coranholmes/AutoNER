@@ -2,8 +2,8 @@ MODEL_NAME="BC5CDR"
 RAW_TEXT="data/BC5CDR/raw_text.txt"
 DICT_CORE="data/BC5CDR/dict_core.txt"
 DICT_FULL="data/BC5CDR/dict_full.txt"
-EMBEDDING_TXT_FILE="embedding/bio_embedding.txt"
-MUST_RE_RUN=0
+EMBEDDING_TXT_FILE="embedding/bio_embedding_small.txt"
+MUST_RE_RUN=1
 
 green=`tput setaf 2`
 reset=`tput sgr0`
@@ -56,9 +56,9 @@ echo ${green}=== Training AutoNER Model ===${reset}
 python train_partial_ner.py \
     --cp_root $CHECKPOINT_DIR \
     --checkpoint_name $CHECKPOINT_NAME \
-    --eval_dataset $MODEL_ROOT/encoded_data/test.pk \
-    --train_dataset $MODEL_ROOT/encoded_data/train_0.pk \
+    --eval_dataset $MODEL_ROOT/encoded_data/test_py2.pk \
+    --train_dataset $MODEL_ROOT/encoded_data/train_0_py2.pk \
     --update SGD --lr 0.05 --hid_dim 300 --droprate 0.5 \
-    --sample_ratio 1.0 --word_dim 200 --epoch 50
+    --sample_ratio 1.0 --word_dim 200 --epoch 2
 
 echo ${green}Done.${reset}

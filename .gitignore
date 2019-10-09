@@ -36,3 +36,11 @@ AutoPhrase
 *.exe
 *.out
 *.app
+
+embedding/
+*/.DS_Store
+.idea/
+venv/
+*.pyc
+__pycache__/
+

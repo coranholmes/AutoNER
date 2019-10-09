@@ -32,10 +32,10 @@ class RawDataset(object):
         Batch size.
     """
     def __init__(self, 
-                dataset: list, 
-                w_pad: int, 
-                c_pad: int, 
-                token_per_batch: int):
+                dataset, 
+                w_pad, 
+                c_pad, 
+                token_per_batch):
         super(RawDataset, self).__init__()
         self.dataset = dataset
         self.w_pad = w_pad
@@ -111,10 +111,10 @@ class NERDataset(object):
         Batch size.
     """
     def __init__(self, 
-                dataset: list, 
-                w_pad: int, 
-                c_pad: int, 
-                token_per_batch: int):
+                dataset, 
+                w_pad, 
+                c_pad, 
+                token_per_batch):
         super(NERDataset, self).__init__()
         self.dataset = dataset
         self.w_pad = w_pad
@@ -205,11 +205,11 @@ class TrainDataset(object):
         The ratio for sampling.
     """
     def __init__(self, 
-                dataset_name: str, 
-                w_pad: int, 
-                c_pad: int, 
-                token_per_batch: int, 
-                sample_ratio: float = 1.0):
+                dataset_name, 
+                w_pad, 
+                c_pad, 
+                token_per_batch, 
+                sample_ratio = 1.0):
         
         super(TrainDataset, self).__init__()
         self.sample_ratio = sample_ratio
@@ -313,11 +313,11 @@ class DS_GOLD_MIXED_Dataset(object):
         The ratio for sampling.
     """    
     def __init__(self, 
-                dataset_name: str, 
-                w_pad: int, 
-                c_pad: int, 
-                token_per_batch: int, 
-                sample_ratio: float = 1.0):
+                dataset_name, 
+                w_pad, 
+                c_pad, 
+                token_per_batch, 
+                sample_ratio = 1.0):
         
         super(DS_GOLD_MIXED_Dataset, self).__init__()
         self.sample_ratio = sample_ratio

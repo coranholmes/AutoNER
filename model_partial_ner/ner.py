@@ -34,13 +34,13 @@ class NER(nn.Module):
         The dropout ratio.
     """
     def __init__(self, rnn, 
-                w_num: int, 
-                w_dim: int, 
-                c_num: int, 
-                c_dim: int, 
-                y_dim: int, 
-                y_num: int, 
-                droprate: float):
+                w_num, 
+                w_dim, 
+                c_num, 
+                c_dim, 
+                y_dim, 
+                y_num, 
+                droprate):
 
         super(NER, self).__init__()
 

@@ -15,7 +15,7 @@ from model_partial_ner.object import softCE
 from model_partial_ner.basic import BasicRNN
 from model_partial_ner.dataset import NERDataset, TrainDataset
 
-from torch_scope import wrapper
+from wrapper import *
 
 import argparse
 import logging
@@ -121,7 +121,7 @@ if __name__ == "__main__":
 
             logger.info('############')
             logger.info('Epoch: {}'.format(indexs))
-            pw.nvidia_memory_map(gpu_index = gpu_index)
+            # pw.nvidia_memory_map(gpu_index = gpu_index)
 
             ner_model.train()
 
